@@ -17,7 +17,7 @@
     <div class="col-12">
 
 
-<form method="GET" action="index2.php">
+<form method="POST" action="index2.php">
   <div class="form-group row">
     <label for="nama" class="col-4 col-form-label">Nama Lengkap</label> 
     <div class="col-8">
@@ -35,7 +35,7 @@
     <div class="col-8">
       <select id="matkul" name="matkul" class="custom-select">
         <option value="DDP">DDP</option>
-        <option value="Basis Data">Basis Data</option>
+        <option value="BasisData">Basis Data</option>
         <option value="PK">PK</option>
       </select>
     </div>
