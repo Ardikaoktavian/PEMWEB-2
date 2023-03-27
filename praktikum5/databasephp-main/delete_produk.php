@@ -1,11 +1,9 @@
 <?php 
-require_once("dbkoneksi.php");
-if (isset($_GET["iddelet"])) {
-    $iddelet = $_GET["iddelet"];
-    $query = "DELETE FROM produk WHERE id = '$iddelet'";
-    $delete = $dbh->query($query);
-    echo '<meta http-equiv="refresh" content="0; url=list_produk.php">';
-}
-
+require_once 'dbkoneksi.php';
+    $_iddel = $_GET['iddel'];
+    $sql = "DELETE FROM produk WHERE id=?";
+    $st = $dbh->prepare($sql);
+    $st->execute([$_iddel]);
+    // redirect page
+    header('location:list_produk.php');
 ?>
-
