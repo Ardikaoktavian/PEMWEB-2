@@ -31,7 +31,7 @@
                         <td><?=$row['stok']?></td>
                         <td>
 <a class="btn btn-primary" href="view_produk.php?id=<?=$row['id']?>">View</a>
-<a class="btn btn-primary" href="form_produk.php?idedit=<?=$row['id']?>">Edit</a>
+<a class="btn btn-primary" href="form_edit.php?idedit=<?=$row['id']?>">Edit</a>
 <a class="btn btn-primary" href="delete_produk.php?iddel=<?=$row['id']?>"
 onclick="if(!confirm('Anda Yakin Hapus Data Produk <?=$row['nama']?>?')) {return false}"
 >Delete</a>
