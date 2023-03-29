@@ -4,7 +4,7 @@ require_once 'dbkoneksi.php';
             
 <form method="POST" action="proses_pelanggan.php">
   <div class="form-group row">
-    <label for="kode" class="col-4 col-form-label">Kode</label> 
+    <label for="kode" class="col-4 col-form-label">kode</label> 
     <div class="col-8">
       <div class="input-group">
         <div class="input-group-prepend">
@@ -41,7 +41,7 @@ require_once 'dbkoneksi.php';
           </div>
         </div> 
         <input id="jk" name="jk" 
-        value="L" type="radio" class="form-control">Laki-Laki
+        value="L" type="radio" class="form-control">Laki - Laki
         <input id="jk" name="jk" 
         value="P" type="radio" class="form-control">Perempuan
       </div>
