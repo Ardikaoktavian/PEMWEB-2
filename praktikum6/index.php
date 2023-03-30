@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="">TAMBAH PELANGGAN</a>
+    <a href="form.php">TAMBAH PELANGGAN</a>
     <hr>
         <table border="1">
             <thead>
