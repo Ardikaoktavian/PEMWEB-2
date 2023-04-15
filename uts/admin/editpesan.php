@@ -41,7 +41,7 @@
 
         $stmt->execute();
 
-        header('Location: pesanan.php');
+        header('Location:index.php?halaman=pesanan');
 
 
     }
@@ -54,28 +54,84 @@
   
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Order</title>
+</head>
+<style>
+		form {
+			width: 500px;
+			margin: auto;
+			font-family: sans-serif;
+			border: 1px solid #ccc;
+			padding: 20px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+		}
+		h2 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+		input[type="text"],
+		input[type="email"],
+		textarea {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			background-color: #008CBA;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-top: 10px;
+		}
+		input[type="submit"]:hover {
+			background-color: #006f8c;
+		}
+        button{
+            background-color:yellow;
+        }
+</style>
+<body>
+    
+</body>
+</html>
+<form method="POST">
+		<h2>Edit Order</h2>
+        <input type="hidden" name="tanggal" value="<?php echo $row['tanggal']; ?>">
 
-<form method="post">
-    <input type="hidden" name="tanggal" value="<?php echo $row['tanggal']; ?>">
-
-    <label>Nama Pemesan</label>
+        <label>Nama Pemesan</label>
     <input type="text" name="nama_pemesan" value="<?php echo $row['nama_pemesan']; ?>">
-    <br>
+
     <label>Alamat pemesan</label>
     <input type="text" name="alamat_pemesan" value="<?php echo $row['alamat_pemesan']; ?>">
-    <br>
+
     <label>No HP</label>
     <input type="text" name="no_hp" value="<?php echo $row['no_hp']; ?>">
-    <br>
+
     <label>Email</label>
     <input type="email" name="email" value="<?php echo $row['email']; ?>">
-    <br>
+
     <label>Jumlah Pesanan</label>
     <input type="number" name="jumlah_pesanan" value="<?php echo $row['jumlah_pesanan']; ?>">
-    <br>
+
     <label>Deskripsi</label>
     <input type="deskripsi" name="deskripsi" value="<?php echo $row['deskripsi']; ?>">
-    <br>
 
     <label>Produk</label>
     <select name="produk" id="produk">
@@ -87,6 +143,6 @@
             }
         ?>
     </select>
-    <br>
-    <button type="submit" name="submit">Save</button>
+        <button type="submit" name="submit">Save</button>
 </form>
+

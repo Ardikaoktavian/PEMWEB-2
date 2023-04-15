@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Form Pemesanan</title>
+	<title>Form order</title>
 	<style>
 		form {
 			width: 500px;
@@ -52,7 +52,7 @@
 </head>
 <body>
 	<form action="prosespesan.php" method="POST">
-		<h2>Form Pemesanan</h2>
+		<h2>Form Order</h2>
 		<label>Tanggal:</label>
 		<input type="date" name="tanggal" id="tanggal"required>
 

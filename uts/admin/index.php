@@ -33,7 +33,7 @@
                 <a class="navbar-brand" href="index.html">E - Commerce</a> 
             </div>
   <div style="color: white;
-padding: 15px 50px 5px 50px;
+padding: 0px 0px 0px 750px;
 float: right;
 font-size: 16px;"> Last access : 13 April 2023 &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
@@ -48,9 +48,9 @@ font-size: 16px;"> Last access : 13 April 2023 &nbsp; <a href="#" class="btn btn
 					
                     <li>
                         <a  href="index.php"><i class="fa fa-dashboard fa-3x"></i> Home</a>
-                        <a  href="index.php?halaman=produk"><i class="fa fa-dashboard fa-3x"></i> Produk</a>
-                        <a  href="index.php?halaman=pesanan"><i class="fa fa-dashboard fa-3x"></i> Pesanan</a>
-                        <a  href="index.php?halaman=pelanggan"><i class="fa fa-dashboard fa-3x"></i> Pelanggan</a>
+                        <a  href="index.php?halaman=produk"><i class="fa fa-dashboard fa-3x"></i> Product</a>
+                        <a  href="index.php?halaman=pesanan"><i class="fa fa-dashboard fa-3x"></i> Order</a>
+                        <a  href="index.php?halaman=pelanggan"><i class="fa fa-dashboard fa-3x"></i> Customer</a>
                     </li>
                     
                 </ul>
@@ -100,6 +100,8 @@ font-size: 16px;"> Last access : 13 April 2023 &nbsp; <a href="#" class="btn btn
       <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
     
-   
+    <footer style="bottom: 0; left: 0; width: 100%; background-color: dark-grey; color: white; text-align: center; padding: 10px;">
+   <p>&copy;Project1 | Mahasiswa STT-NF</p>
+</footer>
 </body>
 </html>

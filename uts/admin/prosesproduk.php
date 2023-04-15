@@ -37,5 +37,5 @@ require_once 'dbkoneksi.php';
     $stmt->execute($ar_data);
    }
 
-   header('location:produk.php');
+   header('location:index.php?halaman=produk');
 ?>

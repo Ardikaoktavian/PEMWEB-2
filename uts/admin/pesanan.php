@@ -7,7 +7,7 @@
     $stmt->execute( );
 ?>
 
-<h2>Data Pesanan</h2>
+<h2>Data Order</h2>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,21 +15,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Data Order</title>
 </head>
 <body>
     <hr>
-    <a href="formpesan.php">Tambah Pesanan</a>
+    <ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="index.php">Home</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="index.php?halaman=pesanan">Order</a>
+			</li>
+	</ol>
+    <a href="formpesan.php">Add Order</a>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
     <table  border="1">
     <thead>
         <tr>
             <th>NO</th>
             <th>Tanggal</th>
-            <th>Nama Pemesan</th>
-            <th>Alamat Pemesan</th>
+            <th>Pemesan</th>
+            <th>Alamat </th>
             <th>No HP</th>
             <th>Email</th>
-            <th>Jumlah Pesanan </th>
+            <th>Jumlah  </th>
             <th>Deskripsi</th>
             <th>Produk</th>
             <th>Action</th>
@@ -53,8 +81,8 @@
             <td><?= $row['deskripsi'] ?></td>
             <td><?= $row['produk'] ?></td>
             <td>
-                <a href="editpesan.php?id=<?=$row['id']?>">EDIT</a>
-                <a href="deletepesan.php?id=<?=$row['id']?>">DELETE</a>
+            <a style="green" href="editpesan.php?id=<?=$row['id']?>" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span>EDIT</a>
+            <a href="deletepesan.php?id=<?=$row['id']?>" title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span>DELETE</a>
             </td>
         </tr>
         

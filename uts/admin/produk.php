@@ -7,7 +7,7 @@
     $stmt->execute( );
 ?>
 
-<h2>Data Produk</h2>
+<h2>Data Product</h2>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,11 +15,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Data Product</title>
 </head>
 <body>
     <hr>
-    <a href="formproduk.php">Tambah Pesanan</a>
+    <ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="index.php">Home</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="index.php?halaman=produk">Product</a>
+			</li>
+	</ol>
+    <a href="formproduk.php">Add Products</a>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
     <table  border="1">
     <thead>
         <tr>
@@ -32,6 +60,7 @@
             <th>Min Stok</th>
             <th>Deskripsi</th>
             <th>Kategori Produk</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -52,8 +81,8 @@
             <td><?= $row['deskripsi'] ?></td>
             <td><?= $row['kategori_produk'] ?></td>
             <td>
-                <a href="editproduk.php?id=<?=$row['id']?>">EDIT</a>
-                <a href="deleteproduk.php?id=<?=$row['id']?>">DELETE</a>
+                <a style="green" href="editproduk.php?id=<?=$row['id']?>" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span>EDIT</a>
+                <a href="deleteproduk.php?id=<?=$row['id']?>" title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span>DELETE</a>
             </td>
         </tr>
         

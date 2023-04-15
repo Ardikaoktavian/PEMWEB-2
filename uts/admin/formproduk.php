@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Form Produk</title>
+	<title>Form Product</title>
 	<style>
 		form {
 			width: 500px;
@@ -52,7 +52,7 @@
 </head>
 <body>
 	<form action="prosesproduk.php" method="POST">
-		<h2>Form Produk</h2>
+		<h2>Form Product</h2>
 		<label>Kode:</label>
 		<input type="text" name="kode" id="kode"required>
 
