@@ -60,6 +60,9 @@
 		<label>Email:</label>
 		<input type="email" name="email_pelanggan" id="email_pelanggan"required>
 
+		<label>Password:</label>
+		<input type="password" name="password_pelanggan" id="password_pelanggan"required>
+
         <label>Nama Pelanggan:</label>
 		<input type="text" name="nama_pelanggan" id="nama_pelanggan"required>
 

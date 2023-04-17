@@ -1,6 +1,8 @@
 ﻿<?php
 // koneksi ke database
     require_once 'dbkoneksi.php';
+    require_once 'session.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +37,7 @@
   <div style="color: white;
 padding: 0px 0px 0px 750px;
 float: right;
-font-size: 16px;"> Last access : 13 April 2023 &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;"> Last access : 13 April 2023 &nbsp; <a href="logout.php" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -101,7 +103,7 @@ font-size: 16px;"> Last access : 13 April 2023 &nbsp; <a href="#" class="btn btn
     <script src="assets/js/custom.js"></script>
     
     <footer style="bottom: 0; left: 0; width: 100%; background-color: dark-grey; color: white; text-align: center; padding: 10px;">
-   <p>&copy;Project1 | Mahasiswa STT-NF</p>
+   <p>&copy;Project1 | Mahasiswa STT-NF | Ardika Oktavian</p>
 </footer>
 </body>
 </html>
