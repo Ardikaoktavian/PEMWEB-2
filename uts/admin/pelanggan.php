@@ -10,7 +10,7 @@
 <h2>Data Customer</h2>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,8 +23,8 @@
 			<li class="breadcrumb-item">
 				<a href="index.php">Home</a>
 			</li>
-			<li class="breadcrumb-item">
-				<a href="index.php?halaman=pelanggan">Customer</a>
+			<li class="breadcrumb-item active">
+				Customer
 			</li>
 	</ol>
     <a href="formpelanggan.php">Add Customer</a>

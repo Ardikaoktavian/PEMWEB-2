@@ -7,7 +7,7 @@
     $stmt->execute( );
 ?>
 
-<h2>Data Product</h2>
+<h2>View Product</h2>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Product</title>
+    <title>View Product</title>
+    	<!-- BOOTSTRAP STYLES-->
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- MORRIS CHART STYLES-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
 </head>
 <body>
     <hr>
@@ -23,11 +34,13 @@
 			<li class="breadcrumb-item">
 				<a href="index.php">Home</a>
 			</li>
+			<li class="breadcrumb-item">
+				<a href="index.php?halaman=produk">Product</a>
+			</li>
 			<li class="breadcrumb-item active">
-				Product
+				View Product
 			</li>
 	</ol>
-    <a href="formproduk.php">Add Products</a>
 <style>
     table {
         border-collapse: collapse;
@@ -51,7 +64,7 @@
     <table  border="1">
     <thead>
         <tr>
-            <th>NO</th>
+            <th>ID</th>
             <th>Kode</th>
             <th>Nama</th>
             <th>Harga Jual</th>
@@ -60,7 +73,6 @@
             <th>Min Stok</th>
             <th>Deskripsi</th>
             <th>Kategori Produk</th>
-            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -80,11 +92,6 @@
             <td><?= $row['min_stok'] ?></td>
             <td><?= $row['deskripsi'] ?></td>
             <td><?= $row['kategori_produk'] ?></td>
-            <td>
-                <a href="editproduk.php?id=<?=$row['id']?>" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>
-                <a href="deleteproduk.php?id=<?=$row['id']?>" title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>
-                <a href="viewproduk.php?id=<?=$row['id']?>" title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>
-            </td>
         </tr>
         
         <?php
@@ -94,6 +101,16 @@
 
     </tbody>
     </table>
-
+        <!-- JQUERY SCRIPTS -->
+        <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+     <!-- MORRIS CHART SCRIPTS -->
+     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
 </body>
 </html>

@@ -43,8 +43,8 @@
 					<li class="breadcrumb-item">
 						<a href="index.php">Home</a>
 					</li>
-					<li class="breadcrumb-item">
-						<a href="index.php">Home</a>
+					<li class="breadcrumb-item active">
+						Home
 					</li>
 				</ol>
 			</nav>

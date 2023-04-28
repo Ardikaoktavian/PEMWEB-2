@@ -7,7 +7,7 @@
     $stmt->execute( );
 ?>
 
-<h2>Data Order</h2>
+<h2>View Order</h2>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Data Order</title>
+    <title> View  Order</title>
+        	<!-- BOOTSTRAP STYLES-->
+            <link href="assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- MORRIS CHART STYLES-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
 </head>
 <body>
     <hr>
@@ -23,11 +34,13 @@
 			<li class="breadcrumb-item">
 				<a href="index.php">Home</a>
 			</li>
+			<li class="breadcrumb-item">
+				<a href="index.php?halaman=pesanan">Order</a>
+			</li>
 			<li class="breadcrumb-item active">
-				Order
+				View Order
 			</li>
 	</ol>
-    <a href="formpesan.php">Add Order</a>
 <style>
     table {
         border-collapse: collapse;
@@ -51,16 +64,15 @@
     <table  border="1">
     <thead>
         <tr>
-            <th>NO</th>
+            <th>ID</th>
             <th>Tanggal</th>
-            <th>Pemesan</th>
+            <th>Nama Pemesan</th>
             <th>Alamat </th>
             <th>No HP</th>
             <th>Email</th>
-            <th>Jumlah  </th>
+            <th>Jumlah Pesanan</th>
             <th>Deskripsi</th>
             <th>Produk</th>
-            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -80,11 +92,6 @@
             <td><?= $row['jumlah_pesanan'] ?></td>
             <td><?= $row['deskripsi'] ?></td>
             <td><?= $row['produk'] ?></td>
-            <td>
-            <a href="editpesan.php?id=<?=$row['id']?>" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>
-            <a href="deletepesan.php?id=<?=$row['id']?>" title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>
-            <a href="viewpesan.php?id=<?=$row['id']?>" title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>
-            </td>
         </tr>
         
         <?php
@@ -94,5 +101,17 @@
 
     </tbody>
     </table>
+            <!-- JQUERY SCRIPTS -->
+            <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+     <!-- MORRIS CHART SCRIPTS -->
+     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
 </body>
 </html>

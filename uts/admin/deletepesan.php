@@ -5,6 +5,6 @@ require_once 'dbkoneksi.php';
     $stmt = $conn->prepare($sql);
     $stmt->execute([$id]);
     // redirect page
-    header('location:pesanan.php');
+    header('location:index.php?halaman=pesanan');
 ?>
 
