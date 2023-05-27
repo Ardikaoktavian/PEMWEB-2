@@ -15,4 +15,9 @@ class TokoController extends Controller
     {
         return view('toko/detail');
     }
+
+    public function about ( )
+    {
+        return view('toko/about');
+    }
 }
