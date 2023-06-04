@@ -248,7 +248,7 @@
     <!-- Main content -->
     <section class="content">
 
-          <h1>Produk</h1>
+          <h1>Table</h1>
 
   <section class="container">
 
