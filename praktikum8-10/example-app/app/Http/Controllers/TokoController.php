@@ -34,7 +34,50 @@ class TokoController extends Controller
         $customers = Customer::all( );
         return view('toko/customer', compact('customers'));
     }
+    //FUNCTION FOR CUSTOMER
+    public function new ( )
+    {
+        return view('toko/new');
+    }
 
+    public function member (Request $request)
+    {
+        $request->validate ([
+            'name' => 'required',
+            'address' => 'required',
+            'no_hp' => 'required',
+        ]);
+
+        Customer::create($request->all()); //pemanggilan Customer terkoneksi dengan database
+        return redirect( )->route('customer.customer')->with('success', 'Customer Berhasil Disimpan');
+    }
+
+    public function editc (Customer $customer)
+    {
+        return view('toko/editc', compact('customer'));
+    }
+
+    public function updates (Request $request, Customer $customer)
+    {
+        $request->validate ([
+            'name' => 'required',
+            'address' => 'required',
+            'no_hp' => 'required',
+        ]);
+
+        $customer->update($request->all());
+        return redirect( )->route('customer.customer')->with('update', 'Customer Berhasil Diperbarui');
+    }
+
+    public function destroys (Customer $customer)
+    {
+        $customer->delete();
+
+        return redirect( )->route('customer.customer')->with('delete', 'Customer Berhasil Dihapus');
+    }
+
+
+    // FUNCTIONS FOR PRODUCT
     public function create ( )
     {
         return view('toko/create');
