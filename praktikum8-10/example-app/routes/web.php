@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::post('/pemeriksaan', function () {
 //     return view('pemeriksaan');
@@ -67,43 +67,53 @@ Route::prefix('toko')->group(function(){
     Route::get('/about', 
         [TokoController::class,  'about' ] );
 
-    Route::get('/admin', 
-        [TokoController::class,  'admin' ] )->name('produk.admin');
 
-    Route::get('/customer', 
-        [TokoController::class,  'customer' ]) ->name('customer.customer');
+    // AUTENTIKASI UNTUK LOGIN DAHULU AGAR BISA AKSES toko/admin
+    Route::group(['middleware' => ['auth'] ],  function ( ) {
+
+
+        // ROUTES FOR PRODUCT
+        Route::get('/admin', 
+            [TokoController::class,  'admin' ] )->name('produk.admin');
+
+        Route::get('create', 
+            [TokoController::class,  'create' ] )->name('produk.create');
     
-    //ROUTES FOR CUSTOMER
-    Route::get('new', 
-        [TokoController::class,  'new' ] )->name('customer.new');
+        Route::post('/',
+            [TokoController::class,  'store' ] )->name('produk.store');
+    
+        Route::get('/{product}/edit',
+            [TokoController::class,  'edit' ] )->name('produk.edit');
 
-    Route::post('/member',
-        [TokoController::class,  'member' ] )->name('customer.member');
+        Route::delete('/{product}',
+            [TokoController::class,  'destroy' ] )->name('produk.destroy');
 
-    Route::get('/{customer}/editc',
-        [TokoController::class,  'editc' ] )->name('customer.editc');
-
-    Route::delete('/{customer}',
-        [TokoController::class,  'destroys' ] )->name('customer.destroys');
-
-    Route::put('/{customer}',
-        [TokoController::class,  'updates' ] )->name('customer.updates');
+        Route::put('/{product}',
+            [TokoController::class,  'update' ] )->name('produk.update');
 
 
-    // ROUTES FOR PRODUCT
-    Route::get('create', 
-        [TokoController::class,  'create' ] )->name('produk.create');
-        
-    Route::post('/',
-        [TokoController::class,  'store' ] )->name('produk.store');
-        
-    Route::get('/{product}/edit',
-        [TokoController::class,  'edit' ] )->name('produk.edit');
+        //ROUTES FOR CUSTOMER
+        Route::get('/customer', 
+            [TokoController::class,  'customer' ]) ->name('customer.customer');
 
-    Route::delete('/{product}',
-        [TokoController::class,  'destroy' ] )->name('produk.destroy');
+        Route::get('new', 
+            [TokoController::class,  'new' ] )->name('customer.new');
 
-    Route::put('/{product}',
-        [TokoController::class,  'update' ] )->name('produk.update');
+        Route::post('/member',
+            [TokoController::class,  'member' ] )->name('customer.member');
+
+        Route::get('/{customer}/editc',
+            [TokoController::class,  'editc' ] )->name('customer.editc');
+
+        Route::delete('/{customer}',
+            [TokoController::class,  'destroys' ] )->name('customer.destroys');
+
+        Route::put('/{customer}',
+            [TokoController::class,  'updates' ] )->name('customer.updates');
+
+    });
 
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
